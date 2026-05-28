@@ -47,8 +47,8 @@ public class NotificationServiceImpl implements NotificationService {
 		this.notificationRepository.save(notif);
 	}
 
-	public BaseRes<Object> listingNotif(String userId, Pageable pageable) {
-		BaseRes<Object> response = new BaseRes<Object>();
+	public BaseRes<List<NotificationResponse>> listingNotif(String userId, Pageable pageable) {
+		BaseRes<List<NotificationResponse>> response = new BaseRes<List<NotificationResponse>>();
 		try {
 
 			Page<Notification> page = this.notificationRepository.findByUserId(userId, pageable);

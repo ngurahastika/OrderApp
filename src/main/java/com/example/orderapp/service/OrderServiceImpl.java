@@ -46,8 +46,8 @@ public class OrderServiceImpl implements OrderService {
 	private final SnowflakeIdGenerator snowflakeIdGenerator;
 	private final DataOrderService dataOrderService;
 
-	public BaseRes<Object> createOrder(CreateOrderRequest request) throws Exception {
-		BaseRes<Object> response = new BaseRes<>();
+	public BaseRes<CreatedOrderResponse> createOrder(CreateOrderRequest request) throws Exception {
+		BaseRes<CreatedOrderResponse> response = new BaseRes<>();
 		try {
 
 			BigDecimal total = BigDecimal.ZERO;

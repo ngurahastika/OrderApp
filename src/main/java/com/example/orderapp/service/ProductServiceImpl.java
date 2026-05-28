@@ -24,8 +24,8 @@ public class ProductServiceImpl implements ProductService {
 
 	private final ProductRepository productRepository;
 
-	public BaseRes listingProduct(Pageable pageable) {
-		BaseRes response = new BaseRes();
+	public BaseRes<List<ProductResponse>> listingProduct(Pageable pageable) {
+		BaseRes<List<ProductResponse>> response = new BaseRes<List<ProductResponse>>();
 		try {
 
 			Page<Product> page = this.productRepository.findAll(pageable);
